@@ -4,6 +4,7 @@ import com.example.demo.dto.Employee;
 import com.example.demo.dto.Employees;
 import com.example.demo.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,16 +31,16 @@ public class EmployeeController {
     }
 
     @GetMapping(value = "/employee")
-    public ResponseEntity<Employees> getEmployee(@RequestParam(value = "employeeId") String employeeId) {
+    public ResponseEntity<Employee> getEmployee(@RequestParam(value = "employeeId") String employeeId) {
         //TODO Recupère un employé
-        return null;
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
 
     @PostMapping(value = "/employee")
-    public ResponseEntity<Employees> postEmployee(@RequestBody Employee employee) {
+    public ResponseEntity<Void> postEmployee(@RequestBody Employee employee) {
         //TODO Creation d'un employé
-        return null;
+        return ResponseEntity.status(HttpStatus.NOT_IMPLEMENTED).build();
     }
 
 
