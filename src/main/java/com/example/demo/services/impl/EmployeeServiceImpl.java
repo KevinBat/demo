@@ -4,7 +4,7 @@ import com.example.demo.dto.Employee;
 import com.example.demo.dto.Employees;
 import com.example.demo.entity.EmployeeEntity;
 import com.example.demo.repository.EmployeeRepository;
-import com.example.demo.services.DemoService;
+import com.example.demo.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class DemoServiceImpl implements DemoService {
+public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public DemoServiceImpl(EmployeeRepository employeeRepository) {
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
     }
 

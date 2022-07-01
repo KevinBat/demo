@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.Employee;
 import com.example.demo.dto.Employees;
-import com.example.demo.services.DemoService;
+import com.example.demo.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,19 +12,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DemoController {
+public class EmployeeController {
 
-    private final DemoService demoService;
+    private EmployeeService employeeService;
 
     @Autowired
-    public DemoController(DemoService demoService) {
-        this.demoService = demoService;
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
     }
 
     @GetMapping(value = "/employees")
     public ResponseEntity<Employees> getEmployees() {
 
-        Employees employees = demoService.getEmployees();
+        Employees employees = employeeService.getEmployees();
 
         return ResponseEntity.ok(employees);
     }
@@ -41,5 +41,6 @@ public class DemoController {
         //TODO Creation d'un employé
         return null;
     }
+
 
 }

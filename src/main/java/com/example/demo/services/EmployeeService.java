@@ -3,7 +3,7 @@ package com.example.demo.services;
 import com.example.demo.dto.Employee;
 import com.example.demo.dto.Employees;
 
-public interface DemoService {
+public interface EmployeeService {
 
     Employees getEmployees();
 
